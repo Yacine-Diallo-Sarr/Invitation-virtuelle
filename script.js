@@ -95,22 +95,21 @@ function animateHeroNames() {
     namesEl.textContent = '';
     namesEl.style.opacity = '1';
 
+    // On crée un fragment pour éviter les espaces texte entre les spans
+    const fragment = document.createDocumentFragment();
+
     [...fullText].forEach((char, i) => {
         const span = document.createElement('span');
         span.className = 'letter-reveal';
-
-        if (char === ' ') {
-            // Espace : légèrement plus large pour bien séparer les prénoms
-            span.style.width = '0.35em';
-            span.style.animationDelay = `${i * 80}ms`;
-            span.textContent = '\u00A0';
-        } else {
-            span.textContent = char;
-            span.style.animationDelay = `${i * 80}ms`;
-        }
-
-        namesEl.appendChild(span);
+        span.style.animationDelay = `${i * 80}ms`;
+        // Espace insécable pour les espaces — même taille de police que le reste
+        span.textContent = char === ' ' ? '\u00A0' : char;
+        fragment.appendChild(span);
     });
+
+    namesEl.appendChild(fragment);
+    // Forcer font-size hérité sur les spans (pas de recalcul parasite)
+    namesEl.style.fontSize = window.getComputedStyle(namesEl).fontSize;
 }
 
 
