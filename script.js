@@ -93,13 +93,22 @@ function animateHeroNames() {
 
     const fullText = namesEl.textContent.trim();
     namesEl.textContent = '';
-    namesEl.style.opacity = '1'; // annule l'animation CSS d'origine
+    namesEl.style.opacity = '1';
 
     [...fullText].forEach((char, i) => {
         const span = document.createElement('span');
         span.className = 'letter-reveal';
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        span.style.animationDelay = `${i * 80}ms`;
+
+        if (char === ' ') {
+            // Espace : légèrement plus large pour bien séparer les prénoms
+            span.style.width = '0.35em';
+            span.style.animationDelay = `${i * 80}ms`;
+            span.textContent = '\u00A0';
+        } else {
+            span.textContent = char;
+            span.style.animationDelay = `${i * 80}ms`;
+        }
+
         namesEl.appendChild(span);
     });
 }
