@@ -1,48 +1,30 @@
 /* ========================================
-   CSS VARIABLES & RESET
+   VARIABLES & RESET
    ======================================== */
-
+ 
 :root {
-<<<<<<< HEAD
-    /* Wedding Colors */
-=======
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
     --wedding-nude: #f5ebe0;
     --wedding-ivory: #faf8f6;
     --wedding-champagne: #f7e7ce;
     --wedding-beige: #d4a574;
     --wedding-text: #2c2421;
     --wedding-text-light: #5c5654;
-<<<<<<< HEAD
-
-    /* Fonts */
-=======
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Inter', sans-serif;
     --font-script: 'Allura', cursive;
 }
-
-<<<<<<< HEAD
+ 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-
+ 
 html {
     scroll-behavior: smooth;
     font-size: 16px;
 }
-=======
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; font-size: 16px; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 body {
     font-family: var(--font-sans);
     color: var(--wedding-text);
@@ -51,252 +33,87 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
-
-<<<<<<< HEAD
-
-
+ 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
-
+ 
 /* ========================================
-   YOUTUBE PLAYER CACHÉ
+   MODE JOUR J (5 avril) — hero uniquement
    ======================================== */
-
-#yt-player-container {
-    position: fixed;
-    bottom: -9999px;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    pointer-events: none;
-    visibility: hidden;
-=======
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-
-/* ========================================
-   MODE JOUR J — masque tout sauf le hero
-   ======================================== */
-
+ 
 body.wedding-day #story,
 body.wedding-day #event-details,
 body.wedding-day #countdown,
 body.wedding-day #rsvp {
     display: none !important;
 }
-
-body.wedding-day .hero-section {
-    min-height: 100vh;
-    cursor: default;
-}
-
-/* Supprime l'indicateur de scroll en mode Jour J */
+ 
 body.wedding-day .scroll-indicator {
     display: none;
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
 }
-
+ 
 /* ========================================
    ANIMATIONS
    ======================================== */
-
-<<<<<<< HEAD
+ 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+ 
 @keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
 }
-
+ 
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+ 
 @keyframes scrollBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(10px); }
 }
-
+ 
 .animate-fade-in {
     animation: fadeIn 1.5s ease-out forwards;
     opacity: 0;
 }
-
+ 
 .animate-scale-in {
     animation: scaleIn 1s ease-out 0.5s forwards;
     opacity: 0;
 }
-
+ 
 .animate-fade-up {
     animation: fadeInUp 0.8s ease-out 1s forwards;
     opacity: 0;
 }
-
+ 
 .animate-fade-in-late {
     animation: fadeIn 0.8s ease-out 1.5s forwards;
     opacity: 0;
 }
-
-/* Scroll-triggered animations */
-=======
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-@keyframes scrollBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
-
-.animate-fade-in { animation: fadeIn 1.5s ease-out forwards; opacity: 0; }
-.animate-scale-in { animation: scaleIn 1s ease-out 0.5s forwards; opacity: 0; }
-.animate-fade-up { animation: fadeInUp 0.8s ease-out 1s forwards; opacity: 0; }
-.animate-fade-in-late { animation: fadeIn 0.8s ease-out 1.5s forwards; opacity: 0; }
-
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
+ 
 .fade-on-scroll {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-<<<<<<< HEAD
-
+ 
 .fade-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* INTRO ENVELOPPE */
-.intro{
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #f6f2ed;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.envelope{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background: linear-gradient(135deg, #f3e6dc, #efe1d6);
-  cursor: pointer;
-  overflow: hidden;
-}
-
-/* Rabat */
-.envelope::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:#f7ede5;
-  clip-path: polygon(0 0, 100% 0, 50% 55%);
-  transform-origin: top center;
-  transition: transform 1.4s cubic-bezier(.77,0,.18,1);
-  z-index: 2;
-}
-
-/* Cachet */
-.seal{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  background: radial-gradient(circle at 30% 30%, #b22b2b, #7a0d12);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'Allura',cursive;
-  font-size:32px;
-  z-index:5;
-  box-shadow:
-    inset -4px -6px 10px rgba(0,0,0,.35),
-    0 12px 25px rgba(0,0,0,.35);
-  transition: transform .8s ease, opacity .8s ease;
-}
-
-
-.envelope.open .seal{
-  transform:translate(-50%,-50%) scale(0);
-  opacity:0;
-}
-
-.envelope.open::before{
-  transform:rotateX(180deg);
-}
-
-
-/* SITE */
-.site{
-  opacity:0;
-  transform:translateY(40px);
-  transition:opacity 1.2s ease, transform 1.2s ease;
-}
-
-.site.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px;
-}
-
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:34px;
-  font-weight:400;
-}
-
-.hero span{
-  display:block;
-  font-family:'Allura',cursive;
-  font-size:42px;
-  margin-top:12px;
-}
-=======
-.fade-on-scroll.visible { opacity: 1; transform: translateY(0); }
-
+ 
 /* ========================================
    INTRO ENVELOPPE
    ======================================== */
-
+ 
 .intro {
     position: fixed;
     inset: 0;
@@ -308,7 +125,7 @@ body.wedding-day .scroll-indicator {
     align-items: center;
     justify-content: center;
 }
-
+ 
 .envelope {
     width: 100%;
     height: 100%;
@@ -317,52 +134,55 @@ body.wedding-day .scroll-indicator {
     cursor: pointer;
     overflow: hidden;
 }
-
+ 
+/* Rabat triangulaire */
 .envelope::before {
     content: '';
     position: absolute;
     inset: 0;
     background: #f7ede5;
-    clip-path: polygon(0 0, 100% 0, 50% 55%);
+    clip-path: polygon(0 0, 100% 0, 50% 52%);
     transform-origin: top center;
-    transition: transform 1.4s cubic-bezier(.77,0,.18,1);
+    transition: transform 1.4s cubic-bezier(.77, 0, .18, 1);
     z-index: 2;
 }
-
+ 
+/* Cachet */
 .seal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90px;
-    height: 90px;
+    width: clamp(70px, 18vw, 90px);
+    height: clamp(70px, 18vw, 90px);
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, #b22b2b, #7a0d12);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Allura', cursive;
-    font-size: 32px;
+    font-family: var(--font-script);
+    font-size: clamp(20px, 5vw, 32px);
     z-index: 5;
     box-shadow: inset -4px -6px 10px rgba(0,0,0,.35), 0 12px 25px rgba(0,0,0,.35);
     transition: transform .8s ease, opacity .8s ease;
 }
-
-.envelope.open .seal { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-.envelope.open::before { transform: rotateX(180deg); }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
+.envelope.open .seal {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+ 
+.envelope.open::before {
+    transform: rotateX(180deg);
+}
+ 
 /* ========================================
    HERO SECTION
    ======================================== */
-
+ 
 .hero-section {
-<<<<<<< HEAD
-    position: relative; /* Indispensable pour que le flou ne dépasse pas */
-=======
     position: relative;
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -372,121 +192,93 @@ body.wedding-day .scroll-indicator {
     overflow: hidden;
     background: linear-gradient(to bottom, var(--wedding-ivory), var(--wedding-nude), var(--wedding-ivory));
 }
-
-<<<<<<< HEAD
-/* On crée une couche séparée pour l'image afin de la flouter seule */
+ 
+/* Image de fond flouée */
 .hero-section::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-=======
-.hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
+    inset: 0;
     background-image: url(https://th.bing.com/th/id/OIP.MIqyG74BfuA5PevkyTuCrwHaE8?w=303&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-<<<<<<< HEAD
-    filter: blur(8px); /* Intensité du flou */
-    transform: scale(1.1); /* Évite les bords transparents */
-    z-index: 0; /* Reste en arrière-plan */
+    filter: blur(8px);
+    transform: scale(1.1);
+    z-index: 0;
 }
-
-/* Force tous les éléments (textes, boutons, compte à rebours) au premier plan */
+ 
 .hero-section > * {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
-
+ 
 .pattern-overlay {
     position: absolute;
     inset: 0;
     opacity: 0.03;
     pointer-events: none;
+    z-index: 1;
 }
-
+ 
 .pattern-svg {
     width: 100%;
     height: 100%;
 }
-
+ 
 .hero-content {
     position: relative;
-    z-index: 10;
+    z-index: 2;
     text-align: center;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
-=======
-    filter: blur(8px);
-    transform: scale(1.1);
-    z-index: 0;
-}
-
-.hero-section > * { position: relative; z-index: 1; }
-
-.pattern-overlay { position: absolute; inset: 0; opacity: 0.03; pointer-events: none; }
-.pattern-svg { width: 100%; height: 100%; }
-
-.hero-content { position: relative; z-index: 10; text-align: center; max-width: 1000px; margin: 0 auto; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .hero-intro {
     font-family: var(--font-sans);
     font-weight: 300;
-    font-size: 0.75rem;
+    font-size: clamp(0.6rem, 2vw, 0.75rem);
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     opacity: 0.6;
 }
-
+ 
 .hero-names {
     font-family: var(--font-script);
-    font-size: clamp(3.5rem, 12vw, 7rem);
+    font-size: clamp(2.8rem, 12vw, 7rem);
     font-weight: 400;
     line-height: 1.2;
     color: var(--wedding-text);
-    margin-bottom: 4rem;
-}
-
-<<<<<<< HEAD
-.hero-date {
     margin-bottom: 2rem;
 }
-
-=======
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
+ 
 .date-main {
     font-family: var(--font-serif);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
     font-weight: 300;
     color: var(--wedding-text-light);
     margin-bottom: 0.5rem;
     letter-spacing: 0.05em;
 }
-
+ 
 .date-location {
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
     font-weight: 300;
     letter-spacing: 0.2em;
     opacity: 0.6;
 }
-
+ 
 .scroll-indicator {
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
 }
-
+ 
 .scroll-mouse {
     width: 1.5rem;
     height: 2.5rem;
@@ -498,27 +290,23 @@ body.wedding-day .scroll-indicator {
     padding: 0.5rem;
     animation: scrollBounce 1.5s ease-in-out infinite;
 }
-
+ 
 .scroll-wheel {
     width: 0.25rem;
     height: 0.5rem;
     background-color: var(--wedding-beige);
     border-radius: 0.125rem;
 }
-
+ 
 /* ========================================
    STORY SECTION
    ======================================== */
-
-<<<<<<< HEAD
+ 
 .story-section {
     padding: 6rem 1.5rem;
     background-color: white;
 }
-=======
-.story-section { padding: 6rem 1.5rem; background-color: white; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .decorative-divider,
 .decorative-divider-bottom {
     display: flex;
@@ -527,81 +315,64 @@ body.wedding-day .scroll-indicator {
     gap: 1rem;
     margin-bottom: 3rem;
 }
-
-<<<<<<< HEAD
+ 
 .decorative-divider-bottom {
     margin-top: 3rem;
     margin-bottom: 0;
 }
-=======
-.decorative-divider-bottom { margin-top: 3rem; margin-bottom: 0; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .divider-line {
     height: 1px;
     width: 3rem;
     background: linear-gradient(to right, transparent, var(--wedding-beige));
 }
-<<<<<<< HEAD
-
+ 
 .divider-line:last-child {
     background: linear-gradient(to left, transparent, var(--wedding-beige));
 }
-=======
-.divider-line:last-child { background: linear-gradient(to left, transparent, var(--wedding-beige)); }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .section-title {
     font-family: var(--font-serif);
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 400;
     color: var(--wedding-text);
     text-align: center;
     margin-bottom: 2rem;
 }
-
+ 
 .story-content {
     max-width: 48rem;
     margin: 0 auto;
     text-align: center;
     font-family: var(--font-sans);
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
     line-height: 1.8;
     color: var(--wedding-text-light);
     font-weight: 300;
 }
-
-<<<<<<< HEAD
+ 
 .story-content p {
     margin-bottom: 1.5rem;
 }
-
+ 
 .story-final {
     padding-top: 1rem;
 }
-=======
-.story-content p { margin-bottom: 1.5rem; }
-.story-final { padding-top: 1rem; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 /* ========================================
-   EVENT DETAILS SECTION
+   EVENT SECTION
    ======================================== */
-
+ 
 .event-section {
     padding: 6rem 1.5rem;
     background: linear-gradient(to bottom, white, var(--wedding-nude), white);
 }
-
-<<<<<<< HEAD
+ 
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
 }
-=======
-.section-header { text-align: center; margin-bottom: 4rem; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .section-subtitle {
     font-family: var(--font-sans);
     font-size: 0.75rem;
@@ -611,55 +382,42 @@ body.wedding-day .scroll-indicator {
     opacity: 0.6;
     margin-bottom: 1rem;
 }
-
+ 
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem 3rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3rem 2rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
-
-<<<<<<< HEAD
+ 
 .event-card {
     text-align: center;
     transition: transform 0.3s ease;
 }
-
+ 
 .event-card:hover {
     transform: translateY(-5px);
 }
-=======
-.event-card { text-align: center; transition: transform 0.3s ease; }
-.event-card:hover { transform: translateY(-5px); }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .event-icon {
     width: 4rem;
     height: 4rem;
     margin: 0 auto 1.5rem;
     border-radius: 50%;
     background-color: white;
-<<<<<<< HEAD
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-=======
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--wedding-beige);
     transition: transform 0.3s ease;
 }
-
-<<<<<<< HEAD
+ 
 .event-card:hover .event-icon {
     transform: scale(1.1);
 }
-=======
-.event-card:hover .event-icon { transform: scale(1.1); }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .event-label {
     font-family: var(--font-sans);
     font-size: 0.75rem;
@@ -669,15 +427,15 @@ body.wedding-day .scroll-indicator {
     opacity: 0.6;
     margin-bottom: 0.75rem;
 }
-
+ 
 .event-value {
     font-family: var(--font-serif);
-    font-size: 1.75rem;
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
     font-weight: 400;
     color: var(--wedding-text);
     margin-bottom: 0.5rem;
 }
-
+ 
 .event-description {
     font-family: var(--font-sans);
     font-size: 0.9375rem;
@@ -685,62 +443,46 @@ body.wedding-day .scroll-indicator {
     color: var(--wedding-text-light);
     opacity: 0.7;
 }
-
-<<<<<<< HEAD
+ 
 .decorative-pattern {
     margin-top: 4rem;
     display: flex;
     justify-content: center;
 }
-=======
-.decorative-pattern { margin-top: 4rem; display: flex; justify-content: center; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 /* ========================================
    COUNTDOWN SECTION
    ======================================== */
-
-<<<<<<< HEAD
+ 
 .countdown-section {
     padding: 6rem 1.5rem;
     background-color: white;
 }
-=======
-.countdown-section { padding: 6rem 1.5rem; background-color: white; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .countdown-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    max-width: 80rem;
+    max-width: 60rem;
     margin: 0 auto;
 }
-
-@media (min-width: 768px) {
-<<<<<<< HEAD
+ 
+@media (min-width: 640px) {
     .countdown-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
     }
 }
-
+ 
 .countdown-card {
     position: relative;
     transition: transform 0.3s ease;
 }
-
+ 
 .countdown-card:hover {
     transform: scale(1.05);
 }
-=======
-    .countdown-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-}
-
-.countdown-card { position: relative; transition: transform 0.3s ease; }
-.countdown-card:hover { transform: scale(1.05); }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .countdown-bg {
     position: absolute;
     inset: 0;
@@ -749,108 +491,74 @@ body.wedding-day .scroll-indicator {
     opacity: 0.3;
     transition: opacity 0.3s ease;
 }
-
-<<<<<<< HEAD
+ 
 .countdown-card:hover .countdown-bg {
     opacity: 0.4;
 }
-
-.countdown-content {
-    position: relative;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    padding: 2rem;
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
-}
-
-.countdown-card:hover .countdown-content {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-=======
-.countdown-card:hover .countdown-bg { opacity: 0.4; }
-
+ 
 .countdown-content {
     position: relative;
     background: rgba(255,255,255,0.8);
     backdrop-filter: blur(10px);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1.5rem 1rem;
     border: 1px solid rgba(212,165,116,0.2);
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     transition: box-shadow 0.3s ease;
+    text-align: center;
 }
-
-.countdown-card:hover .countdown-content { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
+.countdown-card:hover .countdown-content {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+ 
 .countdown-value {
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 300;
     color: var(--wedding-text);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     line-height: 1;
 }
-
+ 
 .countdown-label {
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: clamp(0.65rem, 2vw, 0.8125rem);
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     opacity: 0.6;
 }
-
-<<<<<<< HEAD
+ 
 .decorative-dots {
     margin-top: 3rem;
     display: flex;
     justify-content: center;
     gap: 0.75rem;
 }
-
+ 
 .dot {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
     background-color: var(--wedding-beige);
 }
-
-.dot:nth-child(1) {
-    opacity: 0.3;
-}
-
-.dot:nth-child(2) {
-    opacity: 0.5;
-}
-
-.dot:nth-child(3) {
-    opacity: 0.7;
-}
-=======
-.decorative-dots { margin-top: 3rem; display: flex; justify-content: center; gap: 0.75rem; }
-
-.dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background-color: var(--wedding-beige); }
+ 
 .dot:nth-child(1) { opacity: 0.3; }
 .dot:nth-child(2) { opacity: 0.5; }
 .dot:nth-child(3) { opacity: 0.7; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 /* ========================================
    RSVP SECTION
    ======================================== */
-
+ 
 .rsvp-section {
     position: relative;
     padding: 8rem 1.5rem;
     background: linear-gradient(to bottom, white, var(--wedding-ivory), var(--wedding-nude));
     overflow: hidden;
 }
-
-<<<<<<< HEAD
+ 
 .rsvp-bg-blur {
     position: absolute;
     width: 10rem;
@@ -858,14 +566,14 @@ body.wedding-day .scroll-indicator {
     border-radius: 50%;
     filter: blur(60px);
 }
-
+ 
 .rsvp-bg-left {
     top: 5rem;
     left: 2.5rem;
     background-color: var(--wedding-champagne);
     opacity: 0.1;
 }
-
+ 
 .rsvp-bg-right {
     bottom: 5rem;
     right: 2.5rem;
@@ -874,41 +582,30 @@ body.wedding-day .scroll-indicator {
     background-color: var(--wedding-beige);
     opacity: 0.1;
 }
-
+ 
 .rsvp-section .container {
     max-width: 48rem;
     text-align: center;
     position: relative;
     z-index: 10;
 }
-=======
-.rsvp-bg-blur { position: absolute; width: 10rem; height: 10rem; border-radius: 50%; filter: blur(60px); }
-.rsvp-bg-left { top: 5rem; left: 2.5rem; background-color: var(--wedding-champagne); opacity: 0.1; }
-.rsvp-bg-right { bottom: 5rem; right: 2.5rem; width: 12rem; height: 12rem; background-color: var(--wedding-beige); opacity: 0.1; }
-
-.rsvp-section .container { max-width: 48rem; text-align: center; position: relative; z-index: 10; }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .rsvp-icon {
     width: 5rem;
     height: 5rem;
     margin: 0 auto 2rem;
     border-radius: 50%;
     background-color: white;
-<<<<<<< HEAD
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-=======
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--wedding-beige);
 }
-
+ 
 .rsvp-text {
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.0625rem);
     line-height: 1.8;
     color: var(--wedding-text-light);
     font-weight: 300;
@@ -917,42 +614,42 @@ body.wedding-day .scroll-indicator {
     margin-left: auto;
     margin-right: auto;
 }
-
+ 
 .rsvp-button {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 1.25rem 2.5rem;
+    padding: 1.1rem 2rem;
     border-radius: 9999px;
     background-color: var(--wedding-beige);
     color: white;
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
     font-weight: 500;
     letter-spacing: 0.05em;
     text-decoration: none;
     transition: all 0.3s ease;
-<<<<<<< HEAD
-    box-shadow: 0 4px 16px rgba(212, 165, 116, 0.3);
+    box-shadow: 0 4px 16px rgba(212,165,116,0.3);
 }
-
+ 
 .rsvp-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4);
+    box-shadow: 0 8px 24px rgba(212,165,116,0.4);
 }
-
+ 
 .rsvp-button:active {
     transform: scale(0.95);
 }
-
+ 
 .rsvp-button svg {
+    flex-shrink: 0;
     transition: transform 0.3s ease;
 }
-
+ 
 .rsvp-button:hover svg {
     transform: rotate(12deg);
 }
-
+ 
 .rsvp-info {
     margin-top: 2rem;
     font-family: var(--font-sans);
@@ -960,109 +657,39 @@ body.wedding-day .scroll-indicator {
     font-weight: 300;
     opacity: 0.6;
 }
-
+ 
 .rsvp-footer {
     margin-top: 4rem;
     padding-top: 4rem;
-    border-top: 1px solid rgba(212, 165, 116, 0.2);
+    border-top: 1px solid rgba(212,165,116,0.2);
 }
-=======
-    box-shadow: 0 4px 16px rgba(212,165,116,0.3);
-}
-
-.rsvp-button:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(212,165,116,0.4); }
-.rsvp-button:active { transform: scale(0.95); }
-.rsvp-button svg { transition: transform 0.3s ease; }
-.rsvp-button:hover svg { transform: rotate(12deg); }
-
-.rsvp-info { margin-top: 2rem; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 300; opacity: 0.6; }
-
-.rsvp-footer { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid rgba(212,165,116,0.2); }
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
-
+ 
 .rsvp-signature {
     font-family: var(--font-script);
     font-size: clamp(2rem, 5vw, 3rem);
     color: var(--wedding-beige);
     font-weight: 400;
 }
-
+ 
 /* ========================================
-<<<<<<< HEAD
-   RESPONSIVE DESIGN
-   ======================================== */
-
-@media (max-width: 768px) {
-    .hero-names {
-        margin-bottom: 3rem;
-    }
-
-    .story-section,
-    .event-section,
-    .countdown-section {
-        padding: 4rem 1.5rem;
-    }
-
-    .rsvp-section {
-        padding: 5rem 1.5rem;
-    }
-
-    .event-grid {
-        gap: 3rem 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-intro {
-        font-size: 0.65rem;
-        letter-spacing: 0.25em;
-    }
-
-    .countdown-content {
-        padding: 1.5rem;
-    }
-
-    .rsvp-button {
-        padding: 1rem 2rem;
-        font-size: 0.9375rem;
-    }
-=======
    RESPONSIVE
    ======================================== */
-
+ 
 @media (max-width: 768px) {
-    .hero-names { margin-bottom: 3rem; }
-    .story-section, .event-section, .countdown-section { padding: 4rem 1.5rem; }
-    .rsvp-section { padding: 5rem 1.5rem; }
-    .event-grid { gap: 3rem 1.5rem; }
+    .hero-names { margin-bottom: 1.5rem; }
+    .story-section, .event-section, .countdown-section { padding: 4rem 1.25rem; }
+    .rsvp-section { padding: 5rem 1.25rem; }
 }
-
+ 
 @media (max-width: 480px) {
-    .hero-intro { font-size: 0.65rem; letter-spacing: 0.25em; }
-    .countdown-content { padding: 1.5rem; }
-    .rsvp-button { padding: 1rem 2rem; font-size: 0.9375rem; }
+    .hero-section { padding: 4rem 1rem; }
+    .hero-intro { letter-spacing: 0.2em; }
+    .hero-names { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+    .countdown-content { padding: 1.25rem 0.75rem; }
+    .envelope::before { clip-path: polygon(0 0, 100% 0, 50% 48%); }
 }
-
-/* ========================================
-   ANIMATION LETTRE PAR LETTRE — hero names
-   ======================================== */
-
-@keyframes letterFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(18px) scale(0.85);
-        filter: blur(4px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-    }
-}
-
-.letter-reveal {
-    display: inline-block;
-    opacity: 0;
-    animation: letterFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
->>>>>>> 3fe392ed91887142a65936aa7292cf2e3e345f03
+ 
+@media (max-width: 360px) {
+    .hero-names { font-size: clamp(2rem, 11vw, 3rem); }
+    .rsvp-button { padding: 1rem 1.5rem; }
 }
